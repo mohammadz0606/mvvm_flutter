@@ -1,16 +1,6 @@
-# mvvm
+# Bock App
 
 A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![photo_5785040349364861725_y](https://user-images.githubusercontent.com/105930030/223774809-d6bd1464-ed85-4460-af2a-bfb460346f8f.jpg)
+![photo_5785040349364861726_y](https://user-images.githubusercontent.com/105930030/223774825-6fe4c799-bdcb-4d53-babb-eeaf487b8640.jpg)

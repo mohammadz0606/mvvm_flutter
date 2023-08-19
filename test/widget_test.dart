@@ -7,24 +7,28 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mvvm/core/api_service.dart';
+import 'package:mvvm/data/models/bock_model.dart';
+import 'package:mvvm/data/repository/home_repository_imple.dart';
 
 import 'package:mvvm/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MVVMApp());
+  HomeRepositoryImpl? getDataAPI;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  setUp(() {
+    getDataAPI = HomeRepositoryImpl(ApiService());
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  group("Get Trending Bock test", () {
+    test("Get Done Trending Bock...", () async {
+      final List<BockModel> bookModel = await getDataAPI!.getNewestBock();
+      expect(bookModel, isA<List<BockModel>>());
+    });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  });
+
+  tearDown(() {
+    getDataAPI = null;
   });
 }

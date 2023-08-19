@@ -33,6 +33,26 @@ class HomeRepositoryImpl implements HomeRepository {
     }
   }
 
+  Future<List<BockModel>> getNewestBock() async{
+    List<BockModel> bocks = [];
+    try {
+      final Map<String, dynamic> data = await _apiService.getResponse(
+        endPoint:
+        "volumes?Filtering=free-ebooks&Sorting=newest &q=subject:programming",
+      );
+      for (var item in data["items"]) {
+        bocks.add(BockModel.fromJson(item));
+      }
+      return bocks;
+    } catch (e) {
+      if (e is HttpException) {
+        throw Exception(e.toString());
+      } else {
+        throw Exception(e.toString());
+      }
+    }
+  }
+
   @override
   Future<Either<Failure, List<BockModel>>> fetchFeatureBock() async {
     List<BockModel> bocks = [];
